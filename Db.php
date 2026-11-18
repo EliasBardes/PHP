@@ -116,5 +116,14 @@ class Db
             ");
             $stmt->execute();
         }
+
+        $userCount = $this->connection->query("SELECT count(*) FROM users")->fetchColumn();
+        if ($userCount == 0) {
+            $stmtUser = $this->connection->prepare("
+                INSERT INTO users (id, name, email, phone, password, role)
+                VALUES (1, 'Camille Martin', 'camille.martin@exemple.fr', '06 12 34 56 78', :password, 'client')
+            ");
+            $stmtUser->execute(['password' => password_hash('password123', PASSWORD_DEFAULT)]);
+        }
     }
 }

@@ -110,7 +110,7 @@ VALUES (
     'Camille Martin',
     'camille.martin@exemple.fr',
     '06 12 34 56 78',
-    '$2y$10$e8460p59hJ15eZ/bT9yNGuq.qZzWbV49yU6k6z4oG8aFmH0vH9Eae',
+    '$2y$10$Kgnf.9s1If86X4razMhDAek2X8VC.AUevXrQRRguiL7ccRVXr7zmK',
     'client'
 )
 ON DUPLICATE KEY UPDATE name=VALUES(name);
